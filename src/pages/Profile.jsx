@@ -36,6 +36,7 @@ function Profile() {
             await updateDoc(userRef, {
                 name,
             })
+            toast.success('Your profile has been updated!')
         }
     } catch (error) {
         toast.error('Oops! Could not update profile details!')
@@ -47,6 +48,7 @@ function Profile() {
       ...prevState,
       [e.target.id]: e.target.value,
     }));
+
   };
 
   return (
@@ -61,15 +63,15 @@ function Profile() {
       <main>
         <div className="profileDetailsHeader">
           <p className="personalDetailsText">Personal Details</p>
-          <p
-            className="changePersonalDetails"
+          <button
+            className="changeBtn"
             onClick={() => {
               changeDetails && onSubmit();
               setChangeDetails((prevState) => !prevState);
             }}
           >
-            {changeDetails ? "done" : "change"}
-          </p>
+            {changeDetails ? "Save" : "Edit"}
+          </button>
         </div>
 
         <div className="profileCard">

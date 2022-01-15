@@ -651,6 +651,22 @@ hr {
   font-weight: 600;
   color: var(--text-color-2);
   background-color: var(--primary-color);
+  padding: .5rem 0.75rem;
+  border-radius: 1rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.changeBtn {
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-color-2);
+  background-color: var(--primary-color);
   padding: 0.25rem 0.75rem;
   border-radius: 1rem;
   -webkit-user-select: none;
@@ -660,10 +676,15 @@ hr {
   user-select: none;
 }
 
+.logOut:active {
+  transform: scale(0.9);
+}
+
 .profileDetailsHeader {
   display: flex;
   justify-content: space-between;
   max-width: 500px;
+  margin-bottom: 1rem;
 }
 
 .personalDetailsText {
@@ -702,11 +723,15 @@ hr {
 .profileNameActive {
   all: unset;
   margin: 0.3rem 0;
+  padding: 0 10px;
   font-weight: 600;
   width: 100%;
+  min-height: 50px;
 }
 .profileNameActive {
   background-color: rgba(44, 44, 44, 0.1);
+  width: 95%;
+  border-radius: 15px;
 }
 
 .profileEmail,
