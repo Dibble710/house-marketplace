@@ -1,7 +1,7 @@
 import { getAuth, updateProfile } from "firebase/auth";
 import { updateDoc, doc } from "firebase/firestore";
 import { db } from "../firebase.config";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
@@ -20,7 +20,7 @@ function Profile() {
 
   const logout = () => {
     auth.signOut();
-    navigate("/");
+    navigate("/sign-in");
   };
 
   const onSubmit = async() => {
@@ -31,7 +31,7 @@ function Profile() {
                 displayName: name,
             })
 
-            // Update in firestore
+            // Update in firestore //
             const userRef = doc(db, 'users', auth.currentUser.uid) 
             await updateDoc(userRef, {
                 name,
@@ -83,11 +83,13 @@ function Profile() {
               onChange={onChange}
             />
 
+            <hr />
+
             <input
               type="email"
               id="email"
               className="profileEmail"
-              disabled='true'
+              disabled={true}
               value={email}
               onChange={onChange}
             />
