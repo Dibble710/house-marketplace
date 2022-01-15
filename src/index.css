@@ -1,4 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --primary-color: #00cc66;
+
+  --bg-color-1: #f2f4f8;
+  --bg-color-2: #ffffff;
+  --bg-spinner: rgba(0, 0, 0, 0.5);
+  
+  --text-color-1: #000000;
+  --text-color-2: #ffffff;
+
+  --nav-color-1: #8f8f8f;
+  --nav-color-2: #2c2c2c;
+
+  --box-shadow-1: rgba(0, 0, 0, 0.11);
+  --box-shadow-2: rgba(0, 0, 0, 0.2);
+}
 * {
   box-sizing: border-box;
 }
@@ -9,7 +26,7 @@ html::-webkit-scrollbar {
 
 body {
   font-family: "Montserrat", sans-serif;
-  background-color: #f2f4f8;
+  background-color: var(--bg-color-1);
   margin: 0;
   box-sizing: border-box;
 }
@@ -17,7 +34,7 @@ body {
 a {
   text-decoration: none;
   display: block;
-  color: #000000;
+  color: var(--text-color-1);
 }
 
 button {
@@ -30,9 +47,9 @@ button {
 .emailInput,
 .nameInput,
 .textarea {
-  box-shadow: rgba(0, 0, 0, 0.11);
+  box-shadow: var(--box-shadow-1);
   border: none;
-  background: #ffffff;
+  background: var(--bg-color-2);
   border-radius: 3rem;
   height: 3rem;
   width: 100%;
@@ -59,10 +76,10 @@ button {
 
 .primaryButton {
   cursor: pointer;
-  background: #00cc66;
+  background: var(--primary-color);
   border-radius: 1rem;
   padding: 0.85rem 2rem;
-  color: #ffffff;
+  color: var(--text-color-2);
   font-weight: 600;
   font-size: 1.25rem;
   width: 80%;
@@ -110,7 +127,7 @@ button {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--bg-spinner);
   z-index: 5000;
   display: flex;
   justify-content: center;
@@ -121,7 +138,7 @@ button {
   width: 64px;
   height: 64px;
   border: 8px solid;
-  border-color: #00cc66 transparent #00cc66 transparent;
+  border-color: var(--primary-color) transparent var(--primary-color) transparent;
   border-radius: 50%;
   animation: spin 1.2s linear infinite;
 }
@@ -145,7 +162,7 @@ button {
   bottom: 0;
   right: 0;
   height: 85px;
-  background-color: #ffffff;
+  background-color: var(--bg-color-2);;
   z-index: 1000;
   display: flex;
   justify-content: center;
@@ -178,10 +195,10 @@ button {
   margin-top: 0.25rem;
   font-size: 14px;
   font-weight: 600;
-  color: #8f8f8f;
+  color: var(--nav-color-1);
 }
 .navbarListItemNameActive {
-  color: #2c2c2c;
+  color: var(--nav-color-2);
 }
 
 .nameInput {
@@ -213,7 +230,7 @@ button {
 
 .forgotPasswordLink {
   cursor: pointer;
-  color: #00cc66;
+  color: var(--primary-color);
   font-weight: 600;
   text-align: right;
 }
@@ -253,7 +270,7 @@ button {
   align-items: center;
   width: 3rem;
   height: 3rem;
-  background-color: #00cc66;
+  background-color: var(--primary-color);
   border-radius: 50%;
 }
 @media (min-width: 1024px) {
@@ -279,9 +296,9 @@ button {
   margin: 1.5rem;
   width: 3rem;
   height: 3rem;
-  background-color: #ffffff;
+  background-color: var(--bg-color-2);;
   border-radius: 50%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px 0 var(--box-shadow-1);
 }
 
 .socialIconImg {
@@ -290,7 +307,7 @@ button {
 
 .registerLink {
   margin-top: 4rem;
-  color: #00cc66;
+  color: var(--primary-color);
   font-weight: 600;
   text-align: center;
   margin-bottom: 3rem;
@@ -322,7 +339,7 @@ button {
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #ffffff !important;
+  background-color: var(--bg-color-2) !important;
 }
 
 .swiperSlideDiv {
@@ -337,7 +354,7 @@ button {
 }
 
 .swiperSlideText {
-  color: #ffffff;
+  color: var(--text-color-2);
   position: absolute;
   top: 70px;
   left: 0;
@@ -354,13 +371,13 @@ button {
 }
 
 .swiperSlidePrice {
-  color: #000000;
+  color: var(--text-color-1);
   position: absolute;
   top: 143px;
   left: 11px;
   font-weight: 600;
   max-width: 90%;
-  background-color: #ffffff;
+  background-color: var(--bg-color-2);;
   padding: 0.25rem 0.5rem;
   border-radius: 1rem;
 }
@@ -451,7 +468,7 @@ button {
   margin-top: 0.5rem;
   font-weight: 600;
   font-size: 1.1rem;
-  color: #00cc66;
+  color: var(--primary-color);
   margin-bottom: 0;
   display: flex;
   align-items: center;
@@ -475,7 +492,7 @@ button {
   text-align: center;
   padding: 0.25rem 0.5rem;
   background-color: #000000;
-  color: #ffffff;
+  color: var(--text-color-2);
   font-weight: 600;
   border-radius: 1rem;
   opacity: 0.7;
@@ -492,7 +509,7 @@ button {
   top: 3%;
   right: 5%;
   z-index: 2;
-  background-color: #ffffff;
+  background-color: var(--bg-color-2);;
   border-radius: 50%;
   width: 3rem;
   height: 3rem;
@@ -515,7 +532,7 @@ button {
 .discountPrice {
   padding: 0.25rem 0.5rem;
   background-color: #000000;
-  color: #ffffff;
+  color: var(--text-color-2);
   border-radius: 1rem;
   font-size: 0.8rem;
   font-weight: 600;
@@ -524,8 +541,8 @@ button {
 
 .listingType {
   padding: 0.25rem 0.5rem;
-  background-color: #00cc66;
-  color: #ffffff;
+  background-color: var(--primary-color);
+  color: var(--text-color-2);
   border-radius: 2rem;
   display: inline;
   font-weight: 600;
@@ -566,7 +583,7 @@ button {
   top: 9%;
   right: 5%;
   z-index: 2;
-  background-color: #ffffff;
+  background-color: var(--bg-color-2);;
   border-radius: 1rem;
   padding: 0.5rem 1rem;
   font-weight: 600;
@@ -624,8 +641,8 @@ button {
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   font-weight: 600;
-  color: #ffffff;
-  background-color: #00cc66;
+  color: var(--text-color-2);
+  background-color: var(--primary-color);
   padding: 0.25rem 0.75rem;
   border-radius: 1rem;
 }
@@ -643,14 +660,14 @@ button {
 .changePersonalDetails {
   cursor: pointer;
   font-weight: 600;
-  color: #00cc66;
+  color: var(--primary-color);
 }
 
 .profileCard {
-  background-color: #ffffff;
+  background-color: var(--bg-color-2);;
   border-radius: 1rem;
   padding: 1rem;
-  box-shadow: rgba(0, 0, 0, 0.2);
+  box-shadow: var(--box-shadow-2);
   max-width: 500px;
 }
 
@@ -689,10 +706,10 @@ button {
 }
 
 .createListing {
-  background-color: #ffffff;
+  background-color: var(--bg-color-2);;
   border-radius: 1rem;
   padding: 0.25rem 1rem;
-  box-shadow: rgba(0, 0, 0, 0.2);
+  box-shadow: var(--box-shadow-2);
   margin-top: 2rem;
   font-weight: 600;
   max-width: 500px;
@@ -728,7 +745,7 @@ button {
 .formInputFile,
 .formButtonActive {
   padding: 0.9rem 3rem;
-  background-color: #ffffff;
+  background-color: var(--bg-color-2);;
   font-weight: 600;
   border-radius: 1rem;
   font-size: 1rem;
@@ -738,8 +755,8 @@ button {
   align-items: center;
 }
 .formButtonActive {
-  background-color: #00cc66;
-  color: #ffffff;
+  background-color: var(--primary-color);
+  color: var(--text-color-2);
 }
 
 .flex {
@@ -793,9 +810,9 @@ button {
   width: 100%;
 }
 .formInputFile::-webkit-file-upload-button {
-  background-color: #00cc66;
+  background-color: var(--primary-color);
   border: none;
-  color: #ffffff;
+  color: var(--text-color-2);
   font-weight: 600;
   padding: 0.5rem 0.75rem;
   border-radius: 1rem;
@@ -813,7 +830,7 @@ button {
 .offerBadge {
   padding: 0.25rem 0.5rem;
   background-color: #000000;
-  color: #ffffff;
+  color: var(--text-color-2);
   border-radius: 1rem;
   margin-left: 1rem;
   font-size: 0.8rem;
