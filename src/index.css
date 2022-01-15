@@ -289,10 +289,15 @@ hr {
 }
 
 .socialLogin {
-  margin-top: 4rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
+}
+
+.socialLoginText {
+  text-align: center;
+  margin-top: 4rem;
 }
 
 .socialIconDiv {
