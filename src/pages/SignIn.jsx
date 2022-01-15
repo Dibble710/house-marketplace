@@ -1,5 +1,8 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import { Link, useNavigate } from "react-router-dom";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { ReactComponent as ArrowRightIcon } from "../assets/svg/keyboardArrowRightIcon.svg";
 import visibilityIcon from "../assets/svg/visibilityIcon.svg";
 
@@ -15,11 +18,31 @@ function SignIn() {
   const { email, password } = formData;
 
   const onChange = (e) => {
-      setFormData((prevState) => ({
-          ...prevState,
-          //target the elements id for more usability
-          [e.target.id]: e.target.value
-      }))
+    setFormData((prevState) => ({
+      ...prevState,
+      //target the elements id for more usability
+      [e.target.id]: e.target.value,
+    }));
+  };
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const auth = getAuth();
+
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+      if (userCredential.user) {
+        navigate("/");
+      }
+    } catch (error) {
+      toast.error('Incorrect Email or Password')
+    }
   };
 
   return (
@@ -30,7 +53,7 @@ function SignIn() {
         </header>
 
         <main>
-          <form>
+          <form onSubmit={onSubmit}>
             <input
               type="email"
               className="emailInput"
@@ -63,7 +86,7 @@ function SignIn() {
 
             <div className="signInBar">
               <p className="signInText">Sign In</p>
-              <button className="signInButton">
+              <button type="submit" className="signInButton">
                 <ArrowRightIcon fill="#fff" width="34px" height="34px" />
               </button>
             </div>
