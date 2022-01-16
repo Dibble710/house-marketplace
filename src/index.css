@@ -491,6 +491,8 @@ hr {
   display: flex;
   justify-content: space-between;
   max-width: 275px;
+  margin-top: 1rem;
+  align-items: center;
 }
 
 .categoryListingInfoText {
