@@ -715,6 +715,7 @@ hr {
   padding: 1rem;
   box-shadow: var(--box-shadow-2);
   max-width: 500px;
+  display: flex;
 }
 
 .profileDetails {

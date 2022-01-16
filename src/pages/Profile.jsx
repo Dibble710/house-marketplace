@@ -32,11 +32,12 @@ function Profile() {
             })
 
             // Update in firestore //
-            const userRef = doc(db, 'users', auth.currentUser.uid) 
+            const userRef = doc(db, 'users', auth.currentUser.uid)
             await updateDoc(userRef, {
                 name,
             })
             toast.success('Your profile has been updated!')
+            console.log(auth.currentUser);
         }
     } catch (error) {
         toast.error('Oops! Could not update profile details!')
@@ -54,7 +55,7 @@ function Profile() {
   return (
     <div className="profile">
       <header className="profileHeader">
-        <p className="pageHeader">My Profile</p>
+        <p className="pageHeader">Welcome Back!</p>
         <button type="button" className="logOut" onClick={logout}>
           Logout
         </button>
@@ -62,7 +63,7 @@ function Profile() {
 
       <main>
         <div className="profileDetailsHeader">
-          <p className="personalDetailsText">Personal Details</p>
+          <p className="personalDetailsText">My Information</p>
           <button
             className="changeBtn"
             onClick={() => {
@@ -76,6 +77,7 @@ function Profile() {
 
         <div className="profileCard">
           <form>
+            <p>Name:
             <input
               type="text"
               id="name"
@@ -84,9 +86,10 @@ function Profile() {
               value={name}
               onChange={onChange}
             />
+            </p>
 
             <hr />
-
+            <p>Email:
             <input
               type="email"
               id="email"
@@ -95,6 +98,7 @@ function Profile() {
               value={email}
               onChange={onChange}
             />
+            </p>
           </form>
         </div>
       </main>

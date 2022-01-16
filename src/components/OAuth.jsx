@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import googleIcon from "../assets/svg/googleIcon.svg";
 import facebookIcon from "../assets/svg/facebook.svg";
 import githubIcon from "../assets/svg/github.svg";
+import {FiGithub} from 'react-icons/fi'
 
 
 
@@ -99,7 +100,7 @@ function OAuth() {
           <img src={facebookIcon} alt="Facebook" className="socialIconImg" />
         </button>
         <button className="socialIconDiv" onClick={onGithubClick}>
-          <img src={githubIcon} alt="Github" className="socialIconImg" />
+          <FiGithub size='24px' />
         </button>
       </div>
     </>

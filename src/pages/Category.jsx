@@ -56,7 +56,7 @@ function Category() {
     fetchListings();
   }, [params.categoryName]);
   return (
-    <div className="categoryf">
+    <div className="category">
       <header>
         <p className="pageHeader">
           {params.categoryName === "rent"
